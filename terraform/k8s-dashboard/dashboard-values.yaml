@@ -1,0 +1,7 @@
+metricsScraper:    # Enables the metrics scraper that collects cluster resource usage data && Helps the dashboard show CPU, memory usage, etc. 
+  enabled: true
+
+web:
+  service:  # Exposes the K8s Dashboard externally using a K8s LoadBalancer serivice && AWS will automatically provision external ELB && We'll be able to access the Dashborad via this external IP
+    type: LoadBalancer
+    port: 80  # Expose on port 80 for easier browser access

@@ -16,5 +16,12 @@ terraform {
     cloudinit = { # used for installing packages or setting up the environment at launch time
       source  = "hashicorp/cloudinit"
     }
+
+    docker = {
+      source  = "kreuzwerker/docker"
+      version = "3.6.1"
+    }
+
   }
 }
+
