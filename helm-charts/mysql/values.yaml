@@ -1,0 +1,28 @@
+replicaCount: 1
+
+image:
+  repository: mysql
+  tag: "8.0"
+  pullPolicy: IfNotPresent
+
+mysqlRootPassword: supersecret
+mysqlUser: hello
+mysqlPassword: kaizen123
+mysqlDatabase: testdb
+
+service:
+  type: ClusterIP
+  port: 3306
+
+resources:
+  limits:
+    cpu: "200m"
+    memory: "100Mi"
+  requests:
+    cpu: "50m"
+    memory: "50Mi"
+
+persistence:
+  enabled: true
+  size: 1Gi
+  storageClass: "gp2"

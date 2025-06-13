@@ -1,0 +1,6 @@
+image:
+  repository: bn089/web
+  tag: latest
+image:
+  repository: bn089/api
+  tag: latest
