@@ -17,15 +17,12 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
-            - containerPort: 3000
+            - containerPort: 3005
           env:
             - name: API_HOST
-              valueFrom:
-                configMapKeyRef:
-                  name: {{ .Release.Name }}-config
-                  key: API_HOST
+              value: {{ .Values.env.API_HOST }}
             - name: PORT 
-              value: "{{ .Values.env.PORT }}"
+              value: {{ .Values.env.PORT | quote }}
           livenessProbe: {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe: {{- toYaml .Values.readinessProbe | nindent 12 }}
           resources:

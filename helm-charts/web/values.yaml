@@ -8,11 +8,11 @@ image:
 service:
   type: LoadBalancer
   port: 80
-  targetPort: 3000
+  targetPort: 3005
 
 env:
-  API_HOST: "http://api:3001"
-  PORT: "3000"
+  API_HOST: "http://api:3000"
+  PORT: "3005"
 
 resources:
   limits:
@@ -25,13 +25,13 @@ resources:
 livenessProbe:
   httpGet:
     path: /health
-    port: 3000
+    port: 3005
   initialDelaySeconds: 10
   periodSeconds: 10
 
 readinessProbe:
   httpGet:
     path: /health
-    port: 3000
+    port: 3005
   initialDelaySeconds: 5
   periodSeconds: 5

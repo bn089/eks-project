@@ -2,8 +2,7 @@ resource "helm_release" "mysql" {
   name       = "mysql"
   chart      = "${path.module}/../../helm-charts/mysql"
   namespace  = "default"
-  values     = [file("/home/ubuntu/eks-project/helm-charts/values.yaml")]
-  
+  values =    [file("${path.module}/../../helm-charts/mysql/values.yaml")]  
 
   set {
     name  = "mysqlRootPassword"
@@ -12,16 +11,16 @@ resource "helm_release" "mysql" {
 
   set {
     name  = "mysqlUser"
-    value = "hello"
+    value = "user"
   }
 
   set {
     name  = "mysqlPassword"
-    value = "kaizen123"
+    value = "supersecret"
   }
 
   set {
     name  = "mysqlDatabase"
-    value = "testdb"
+    value = "mydb"
   }
 }
