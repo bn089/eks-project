@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Release.Name }}-config
+  name: "{{ .Release.Name }}-config"
 data:
   PORT: "{{ .Values.env.PORT }}"
   DB_HOST: "{{ .Values.env.DB_HOST }}"

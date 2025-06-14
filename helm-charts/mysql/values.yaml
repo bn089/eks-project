@@ -6,9 +6,9 @@ image:
   pullPolicy: IfNotPresent
 
 mysqlRootPassword: supersecret
-mysqlUser: hello
-mysqlPassword: kaizen123
-mysqlDatabase: testdb
+mysqlUser: user
+mysqlPassword: supersecret
+mysqlDatabase: mydb
 
 service:
   type: ClusterIP

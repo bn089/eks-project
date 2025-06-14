@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: "{{ .Release.Name }}-config"
 data:
-  API_URL: "{{ .Values.env.API_URL }}"
+  API_HOST: "{{ .Values.env.API_HOST }}"
+  PORT: "3000"
